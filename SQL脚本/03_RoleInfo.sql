@@ -1,0 +1,5 @@
+insert into RoleInfo(RoleName, DelFlag) values('管理员','1')
+insert into RoleInfo(RoleName, DelFlag) values('事业部领导','1')
+insert into RoleInfo(RoleName, DelFlag) values('安全主管','1')
+insert into RoleInfo(RoleName, DelFlag) values('安全办','1')
+insert into RoleInfo(RoleName, DelFlag) values('责任单位','1')
