@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="DataModelStoreContainer">
+    <EntitySet Name="UnitInfo" EntityType="DataModel.Store.UnitInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserInfo" EntityType="DataModel.Store.UserInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TeamInfo" EntityType="DataModel.Store.TeamInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AccidentInfo" EntityType="DataModel.Store.AccidentInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="HiddenDangerInfo" EntityType="DataModel.Store.HiddenDangerInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RoleInfo" EntityType="DataModel.Store.RoleInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CaseAnalysisInfo" EntityType="DataModel.Store.CaseAnalysisInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserInfoRoleInfo" EntityType="DataModel.Store.UserInfoRoleInfo" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="UnitInfoUserInfo" Association="DataModel.Store.UnitInfoUserInfo">
+      <End Role="UnitInfo" EntitySet="UnitInfo" />
+      <End Role="UserInfo" EntitySet="UserInfo" />
+    </AssociationSet>
+    <AssociationSet Name="UnitInfoTeamInfo" Association="DataModel.Store.UnitInfoTeamInfo">
+      <End Role="UnitInfo" EntitySet="UnitInfo" />
+      <End Role="TeamInfo" EntitySet="TeamInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserInfoRoleInfo_UserInfo" Association="DataModel.Store.FK_UserInfoRoleInfo_UserInfo">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="UserInfoRoleInfo" EntitySet="UserInfoRoleInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserInfoRoleInfo_RoleInfo" Association="DataModel.Store.FK_UserInfoRoleInfo_RoleInfo">
+      <End Role="RoleInfo" EntitySet="RoleInfo" />
+      <End Role="UserInfoRoleInfo" EntitySet="UserInfoRoleInfo" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="UnitInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UnitName" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="IsInspUnit" Type="smallint" Nullable="false" DefaultValue="0" />
+    <Property Name="IsZrdw" Type="smallint" Nullable="false" DefaultValue="0" />
+    <Property Name="DelFlag" Type="smallint" Nullable="false" DefaultValue="1" />
+    <Property Name="UnitProperty" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="Remark" Type="nvarchar" Nullable="true" MaxLength="64" />
+  </EntityType>
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="Pwd" Type="nvarchar" Nullable="false" DefaultValue="123" MaxLength="32" />
+    <Property Name="DelFlag" Type="smallint" Nullable="false" DefaultValue="1" />
+    <Property Name="Remark" Type="nvarchar" Nullable="true" MaxLength="64" />
+    <Property Name="IsVerified" Type="smallint" Nullable="false" DefaultValue="0" />
+    <Property Name="UnitInfoId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TeamInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TeamName" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="DelFlag" Type="smallint" Nullable="false" DefaultValue="1" />
+    <Property Name="Remark" Type="nvarchar" Nullable="true" MaxLength="64" />
+    <Property Name="UnitInfoId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AccidentInfo">
+    <Key>
+      <PropertyRef Name="AId" />
+    </Key>
+    <Property Name="AId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HappenDate" Type="datetime" Nullable="false" />
+    <Property Name="Unit" Type="nvarchar" Nullable="true" MaxLength="32" />
+    <Property Name="AcciType" Type="nvarchar" Nullable="true" MaxLength="32" />
+    <Property Name="AcciDesp" Type="nvarchar" Nullable="true" MaxLength="256" />
+    <Property Name="AcciAnalysis" Type="nvarchar" Nullable="true" MaxLength="256" />
+    <Property Name="Class2" Type="nvarchar" Nullable="true" MaxLength="32" />
+    <Property Name="Remark" Type="nvarchar" Nullable="true" MaxLength="64" />
+    <Property Name="DelFlag" Type="smallint" Nullable="false" DefaultValue="1" />
+  </EntityType>
+  <EntityType Name="HiddenDangerInfo">
+    <Key>
+      <PropertyRef Name="HDId" />
+    </Key>
+    <Property Name="HDId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InspDate" Type="datetime" Nullable="false" />
+    <Property Name="InspUnit" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="Zrdw" Type="nvarchar" Nullable="true" MaxLength="32" />
+    <Property Name="Zrbz" Type="nvarchar" Nullable="true" MaxLength="32" />
+    <Property Name="HidProblem" Type="nvarchar" Nullable="true" MaxLength="128" />
+    <Property Name="ReformMeasure" Type="nvarchar" Nullable="true" MaxLength="128" />
+    <Property Name="PreTime" Type="datetime" Nullable="true" />
+    <Property Name="AchievedDesp" Type="nvarchar" Nullable="true" MaxLength="128" />
+    <Property Name="ReasonNotCompleted" Type="nvarchar" Nullable="true" MaxLength="128" />
+    <Property Name="TraceMan" Type="nvarchar" Nullable="true" MaxLength="32" />
+    <Property Name="Class2" Type="nvarchar" Nullable="true" MaxLength="32" />
+    <Property Name="Level2" Type="nvarchar" Nullable="true" MaxLength="32" />
+    <Property Name="Remark" Type="nvarchar" Nullable="true" MaxLength="64" />
+    <Property Name="DelFlag" Type="smallint" Nullable="true" DefaultValue="1" />
+  </EntityType>
+  <EntityType Name="RoleInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="DelFlag" Type="smallint" Nullable="false" DefaultValue="1" />
+    <Property Name="Remark" Type="nvarchar" Nullable="true" MaxLength="64" />
+  </EntityType>
+  <EntityType Name="CaseAnalysisInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SubTime" Type="datetime" Nullable="false" />
+    <Property Name="DelFlag" Type="smallint" Nullable="false" DefaultValue="1" />
+    <Property Name="Remark" Type="nvarchar" Nullable="true" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="UserInfoRoleInfo">
+    <Key>
+      <PropertyRef Name="UserInfo_Id" />
+      <PropertyRef Name="RoleInfo_Id" />
+    </Key>
+    <Property Name="UserInfo_Id" Type="int" Nullable="false" />
+    <Property Name="RoleInfo_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="UnitInfoUserInfo">
+    <End Role="UnitInfo" Type="DataModel.Store.UnitInfo" Multiplicity="1" />
+    <End Role="UserInfo" Type="DataModel.Store.UserInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UnitInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserInfo">
+        <PropertyRef Name="UnitInfoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UnitInfoTeamInfo">
+    <End Role="UnitInfo" Type="DataModel.Store.UnitInfo" Multiplicity="1" />
+    <End Role="TeamInfo" Type="DataModel.Store.TeamInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UnitInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TeamInfo">
+        <PropertyRef Name="UnitInfoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserInfoRoleInfo_UserInfo">
+    <End Role="UserInfo" Type="DataModel.Store.UserInfo" Multiplicity="1" />
+    <End Role="UserInfoRoleInfo" Type="DataModel.Store.UserInfoRoleInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserInfoRoleInfo">
+        <PropertyRef Name="UserInfo_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserInfoRoleInfo_RoleInfo">
+    <End Role="UserInfoRoleInfo" Type="DataModel.Store.UserInfoRoleInfo" Multiplicity="*" />
+    <End Role="RoleInfo" Type="DataModel.Store.RoleInfo" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="RoleInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserInfoRoleInfo">
+        <PropertyRef Name="RoleInfo_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

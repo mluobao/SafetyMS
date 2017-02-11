@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0C279485-D560-4664-88EC-5DD370CEC4A6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ZhuGuan.AnQuan.UI.Portal</RootNamespace>
+    <AssemblyName>安全管理程序</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>F:\DeployDemo\AnQuan\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>\\luobao\F\DeployDemo\AnQuan\</InstallUrl>
+    <ProductName>铸管部安全管理程序</ProductName>
+    <PublisherName>luobao</PublisherName>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>51</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsUrl>ftp://192.168.100.17/packages/DotNetFX40Client</BootstrapperComponentsUrl>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>39205CC9D868077F9E89F6E99263B9D938ADE206</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>ZhuGuan.AnQuan.UI.Portal_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>aqlogo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="OtherUI\EditCaseFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtherUI\EditCaseFrm.designer.cs">
+      <DependentUpon>EditCaseFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFrm.designer.cs">
+      <DependentUpon>MainFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtherUI\ModifyPwdFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtherUI\ModifyPwdFrm.Designer.cs">
+      <DependentUpon>ModifyPwdFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HiddenDangerInfoUI\HiddenDangerInfoModifyZrInfoFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HiddenDangerInfoUI\HiddenDangerInfoModifyZrInfoFrm.Designer.cs">
+      <DependentUpon>HiddenDangerInfoModifyZrInfoFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginFrm.Designer.cs">
+      <DependentUpon>LoginFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtherUI\RoleSetFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtherUI\RoleSetFrm.Designer.cs">
+      <DependentUpon>RoleSetFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StaticFormFactory.cs" />
+    <Compile Include="UnitInfoUI\UnitInfoAddFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitInfoUI\UnitInfoAddFrm.Designer.cs">
+      <DependentUpon>UnitInfoAddFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitInfoUI\UnitInfoListFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitInfoUI\UnitInfoListFrm.Designer.cs">
+      <DependentUpon>UnitInfoListFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeamInfoUI\TeamInfoAddFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeamInfoUI\TeamInfoAddFrm.Designer.cs">
+      <DependentUpon>TeamInfoAddFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeamInfoUI\TeamInfoListFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeamInfoUI\TeamInfoListFrm.Designer.cs">
+      <DependentUpon>TeamInfoListFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInfoUI\UserInfoListFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInfoUI\UserInfoListFrm.Designer.cs">
+      <DependentUpon>UserInfoListFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInfoUI\UserInfoAddFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInfoUI\UserInfoAddFrm.Designer.cs">
+      <DependentUpon>UserInfoAddFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitInfoUI\UnitInfoModifyFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitInfoUI\UnitInfoModifyFrm.Designer.cs">
+      <DependentUpon>UnitInfoModifyFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeamInfoUI\TeamInfoModifyFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeamInfoUI\TeamInfoModifyFrm.Designer.cs">
+      <DependentUpon>TeamInfoModifyFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInfoUI\UserInfoModifyFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInfoUI\UserInfoModifyFrm.Designer.cs">
+      <DependentUpon>UserInfoModifyFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseFrm.Designer.cs">
+      <DependentUpon>BaseFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccidentInfoUI\AccidentInfoAddFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccidentInfoUI\AccidentInfoAddFrm.Designer.cs">
+      <DependentUpon>AccidentInfoAddFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HiddenDangerInfoUI\HiddenDangerInfoAddFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HiddenDangerInfoUI\HiddenDangerInfoAddFrm.Designer.cs">
+      <DependentUpon>HiddenDangerInfoAddFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccidentInfoUI\AccidentInfoListFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccidentInfoUI\AccidentInfoListFrm.Designer.cs">
+      <DependentUpon>AccidentInfoListFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HiddenDangerInfoUI\HiddenDangerInfoListFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HiddenDangerInfoUI\HiddenDangerInfoListFrm.Designer.cs">
+      <DependentUpon>HiddenDangerInfoListFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccidentInfoUI\AccidentInfoModifyFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccidentInfoUI\AccidentInfoModifyFrm.Designer.cs">
+      <DependentUpon>AccidentInfoModifyFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HiddenDangerInfoUI\HiddenDangerInfoModifyFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HiddenDangerInfoUI\HiddenDangerInfoModifyFrm.Designer.cs">
+      <DependentUpon>HiddenDangerInfoModifyFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="OtherUI\UserRegisterFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtherUI\UserRegisterFrm.Designer.cs">
+      <DependentUpon>UserRegisterFrm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="OtherUI\EditCaseFrm.resx">
+      <DependentUpon>EditCaseFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFrm.resx">
+      <DependentUpon>MainFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherUI\ModifyPwdFrm.resx">
+      <DependentUpon>ModifyPwdFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HiddenDangerInfoUI\HiddenDangerInfoModifyZrInfoFrm.resx">
+      <DependentUpon>HiddenDangerInfoModifyZrInfoFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginFrm.resx">
+      <DependentUpon>LoginFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherUI\RoleSetFrm.resx">
+      <DependentUpon>RoleSetFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitInfoUI\UnitInfoAddFrm.resx">
+      <DependentUpon>UnitInfoAddFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitInfoUI\UnitInfoListFrm.resx">
+      <DependentUpon>UnitInfoListFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeamInfoUI\TeamInfoAddFrm.resx">
+      <DependentUpon>TeamInfoAddFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeamInfoUI\TeamInfoListFrm.resx">
+      <DependentUpon>TeamInfoListFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInfoUI\UserInfoListFrm.resx">
+      <DependentUpon>UserInfoListFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInfoUI\UserInfoAddFrm.resx">
+      <DependentUpon>UserInfoAddFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnitInfoUI\UnitInfoModifyFrm.resx">
+      <DependentUpon>UnitInfoModifyFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeamInfoUI\TeamInfoModifyFrm.resx">
+      <DependentUpon>TeamInfoModifyFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInfoUI\UserInfoModifyFrm.resx">
+      <DependentUpon>UserInfoModifyFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseFrm.resx">
+      <DependentUpon>BaseFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccidentInfoUI\AccidentInfoAddFrm.resx">
+      <DependentUpon>AccidentInfoAddFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HiddenDangerInfoUI\HiddenDangerInfoAddFrm.resx">
+      <DependentUpon>HiddenDangerInfoAddFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccidentInfoUI\AccidentInfoListFrm.resx">
+      <DependentUpon>AccidentInfoListFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HiddenDangerInfoUI\HiddenDangerInfoListFrm.resx">
+      <DependentUpon>HiddenDangerInfoListFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccidentInfoUI\AccidentInfoModifyFrm.resx">
+      <DependentUpon>AccidentInfoModifyFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HiddenDangerInfoUI\HiddenDangerInfoModifyFrm.resx">
+      <DependentUpon>HiddenDangerInfoModifyFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="OtherUI\UserRegisterFrm.resx">
+      <DependentUpon>UserRegisterFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.Config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ZhuGuan.AnQuan.BLLFactory\ZhuGuan.AnQuan.BLLFactory.csproj">
+      <Project>{0B2BA15B-6828-49F0-85F4-B42DD9AD8450}</Project>
+      <Name>ZhuGuan.AnQuan.BLLFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZhuGuan.AnQuan.BLL\ZhuGuan.AnQuan.BLL.csproj">
+      <Project>{DA050DBE-5D05-4405-B717-E199C2A635C0}</Project>
+      <Name>ZhuGuan.AnQuan.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZhuGuan.AnQuan.Common\ZhuGuan.AnQuan.Common.csproj">
+      <Project>{33EA8516-2373-473D-9496-F1F253248F41}</Project>
+      <Name>ZhuGuan.AnQuan.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZhuGuan.AnQuan.DALFactory\ZhuGuan.AnQuan.DALFactory.csproj">
+      <Project>{28209FB9-CEF5-45D5-9D74-0818602D98A4}</Project>
+      <Name>ZhuGuan.AnQuan.DALFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZhuGuan.AnQuan.IBLL\ZhuGuan.AnQuan.IBLL.csproj">
+      <Project>{9F0CBDBA-8560-40FA-90AF-944C01E71DE2}</Project>
+      <Name>ZhuGuan.AnQuan.IBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZhuGuan.AnQuan.IDAL\ZhuGuan.AnQuan.IDAL.csproj">
+      <Project>{FB6697F2-32FD-492D-9CEE-5BAF4DF601DB}</Project>
+      <Name>ZhuGuan.AnQuan.IDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZhuGuan.AnQuan.Model\ZhuGuan.AnQuan.Model.csproj">
+      <Project>{3F9593D3-2D54-458A-B624-37A635A4F543}</Project>
+      <Name>ZhuGuan.AnQuan.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="aqlogo.ico" />
+    <Content Include="Images\aqheader.png" />
+    <Content Include="Images\login.png" />
+    <EmbeddedResource Include="Images\aqlogo.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

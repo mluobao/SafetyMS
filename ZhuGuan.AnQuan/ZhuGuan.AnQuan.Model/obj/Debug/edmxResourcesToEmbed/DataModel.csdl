@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="DataModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="DataModelContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="UnitInfo" EntityType="DataModel.UnitInfo" />
+    <EntitySet Name="UserInfo" EntityType="DataModel.UserInfo" />
+    <EntitySet Name="TeamInfo" EntityType="DataModel.TeamInfo" />
+    <EntitySet Name="AccidentInfo" EntityType="DataModel.AccidentInfo" />
+    <EntitySet Name="HiddenDangerInfo" EntityType="DataModel.HiddenDangerInfo" />
+    <AssociationSet Name="UnitInfoUserInfo" Association="DataModel.UnitInfoUserInfo">
+      <End Role="UnitInfo" EntitySet="UnitInfo" />
+      <End Role="UserInfo" EntitySet="UserInfo" />
+    </AssociationSet>
+    <AssociationSet Name="UnitInfoTeamInfo" Association="DataModel.UnitInfoTeamInfo">
+      <End Role="UnitInfo" EntitySet="UnitInfo" />
+      <End Role="TeamInfo" EntitySet="TeamInfo" />
+    </AssociationSet>
+    <EntitySet Name="RoleInfo" EntityType="DataModel.RoleInfo" />
+    <AssociationSet Name="UserInfoRoleInfo" Association="DataModel.UserInfoRoleInfo">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="RoleInfo" EntitySet="RoleInfo" />
+    </AssociationSet>
+    <EntitySet Name="CaseAnalysisInfo" EntityType="DataModel.CaseAnalysisInfo" />
+  </EntityContainer>
+  <EntityType Name="UnitInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UnitName" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="UserInfo" Relationship="DataModel.UnitInfoUserInfo" FromRole="UnitInfo" ToRole="UserInfo" />
+    <NavigationProperty Name="TeamInfo" Relationship="DataModel.UnitInfoTeamInfo" FromRole="UnitInfo" ToRole="TeamInfo" />
+    <Property Name="IsInspUnit" Type="Int16" Nullable="false" DefaultValue="0" />
+    <Property Name="IsZrdw" Type="Int16" Nullable="false" DefaultValue="0" />
+    <Property Name="DelFlag" Type="Int16" Nullable="false" DefaultValue="1" />
+    <Property Name="UnitProperty" Type="String" Nullable="false" Unicode="true" FixedLength="false" MaxLength="32" />
+    <Property Name="Remark" Type="String" Nullable="true" MaxLength="64" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="Pwd" Type="String" Nullable="false" DefaultValue="123" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="DelFlag" Type="Int16" Nullable="false" DefaultValue="1" />
+    <Property Name="Remark" Type="String" Nullable="true" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="IsVerified" Type="Int16" Nullable="false" DefaultValue="0" />
+    <Property Name="UnitInfoId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="UnitInfo" Relationship="DataModel.UnitInfoUserInfo" FromRole="UserInfo" ToRole="UnitInfo" />
+    <NavigationProperty Name="RoleInfo" Relationship="DataModel.UserInfoRoleInfo" FromRole="UserInfo" ToRole="RoleInfo" />
+  </EntityType>
+  <EntityType Name="TeamInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TeamName" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="DelFlag" Type="Int16" Nullable="false" DefaultValue="1" />
+    <Property Name="Remark" Type="String" Nullable="true" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="UnitInfoId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="UnitInfo" Relationship="DataModel.UnitInfoTeamInfo" FromRole="TeamInfo" ToRole="UnitInfo" />
+  </EntityType>
+  <EntityType Name="AccidentInfo">
+    <Key>
+      <PropertyRef Name="AId" />
+    </Key>
+    <Property Name="AId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HappenDate" Type="DateTime" Nullable="false" />
+    <Property Name="Unit" Type="String" Nullable="true" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="AcciType" Type="String" Nullable="true" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="AcciDesp" Type="String" Nullable="true" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="AcciAnalysis" Type="String" Nullable="true" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Class2" Type="String" Nullable="true" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="Remark" Type="String" Nullable="true" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="DelFlag" Type="Int16" Nullable="false" DefaultValue="1" />
+  </EntityType>
+  <EntityType Name="HiddenDangerInfo">
+    <Key>
+      <PropertyRef Name="HDId" />
+    </Key>
+    <Property Name="HDId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InspDate" Type="DateTime" Nullable="false" />
+    <Property Name="InspUnit" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="Zrdw" Type="String" Nullable="true" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="Zrbz" Type="String" Nullable="true" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="HidProblem" Type="String" Nullable="true" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ReformMeasure" Type="String" Nullable="true" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="PreTime" Type="DateTime" Nullable="true" />
+    <Property Name="AchievedDesp" Type="String" Nullable="true" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ReasonNotCompleted" Type="String" Nullable="true" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="TraceMan" Type="String" Nullable="true" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="Class2" Type="String" Nullable="true" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="Level2" Type="String" Nullable="true" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="Remark" Type="String" Nullable="true" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="DelFlag" Type="Int16" Nullable="true" DefaultValue="1" />
+  </EntityType>
+  <Association Name="UnitInfoUserInfo">
+    <End Type="DataModel.UnitInfo" Role="UnitInfo" Multiplicity="1" />
+    <End Type="DataModel.UserInfo" Role="UserInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UnitInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserInfo">
+        <PropertyRef Name="UnitInfoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UnitInfoTeamInfo">
+    <End Type="DataModel.UnitInfo" Role="UnitInfo" Multiplicity="1" />
+    <End Type="DataModel.TeamInfo" Role="TeamInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UnitInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TeamInfo">
+        <PropertyRef Name="UnitInfoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="RoleInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="DelFlag" Type="Int16" Nullable="false" DefaultValue="1" />
+    <Property Name="Remark" Type="String" Nullable="true" MaxLength="64" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="UserInfo" Relationship="DataModel.UserInfoRoleInfo" FromRole="RoleInfo" ToRole="UserInfo" />
+  </EntityType>
+  <Association Name="UserInfoRoleInfo">
+    <End Type="DataModel.UserInfo" Role="UserInfo" Multiplicity="*" />
+    <End Type="DataModel.RoleInfo" Role="RoleInfo" Multiplicity="*" />
+  </Association>
+  <EntityType Name="CaseAnalysisInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SubTime" Type="DateTime" Nullable="false" />
+    <Property Name="DelFlag" Type="Int16" Nullable="false" DefaultValue="1" />
+    <Property Name="Remark" Type="String" Nullable="true" MaxLength="128" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

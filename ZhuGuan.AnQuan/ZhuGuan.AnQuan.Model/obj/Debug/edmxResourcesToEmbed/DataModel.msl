@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DataModelStoreContainer" CdmEntityContainer="DataModelContainer">
+    <EntitySetMapping Name="UnitInfo">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.UnitInfo)">
+        <MappingFragment StoreEntitySet="UnitInfo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+          <ScalarProperty Name="IsInspUnit" ColumnName="IsInspUnit" />
+          <ScalarProperty Name="IsZrdw" ColumnName="IsZrdw" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="UnitProperty" ColumnName="UnitProperty" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserInfo">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.UserInfo)">
+        <MappingFragment StoreEntitySet="UserInfo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+          <ScalarProperty Name="UnitInfoId" ColumnName="UnitInfoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TeamInfo">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.TeamInfo)">
+        <MappingFragment StoreEntitySet="TeamInfo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TeamName" ColumnName="TeamName" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="UnitInfoId" ColumnName="UnitInfoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccidentInfo">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.AccidentInfo)">
+        <MappingFragment StoreEntitySet="AccidentInfo">
+          <ScalarProperty Name="AId" ColumnName="AId" />
+          <ScalarProperty Name="HappenDate" ColumnName="HappenDate" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="AcciType" ColumnName="AcciType" />
+          <ScalarProperty Name="AcciDesp" ColumnName="AcciDesp" />
+          <ScalarProperty Name="AcciAnalysis" ColumnName="AcciAnalysis" />
+          <ScalarProperty Name="Class2" ColumnName="Class2" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HiddenDangerInfo">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.HiddenDangerInfo)">
+        <MappingFragment StoreEntitySet="HiddenDangerInfo">
+          <ScalarProperty Name="HDId" ColumnName="HDId" />
+          <ScalarProperty Name="InspDate" ColumnName="InspDate" />
+          <ScalarProperty Name="InspUnit" ColumnName="InspUnit" />
+          <ScalarProperty Name="Zrdw" ColumnName="Zrdw" />
+          <ScalarProperty Name="Zrbz" ColumnName="Zrbz" />
+          <ScalarProperty Name="HidProblem" ColumnName="HidProblem" />
+          <ScalarProperty Name="ReformMeasure" ColumnName="ReformMeasure" />
+          <ScalarProperty Name="PreTime" ColumnName="PreTime" />
+          <ScalarProperty Name="AchievedDesp" ColumnName="AchievedDesp" />
+          <ScalarProperty Name="ReasonNotCompleted" ColumnName="ReasonNotCompleted" />
+          <ScalarProperty Name="TraceMan" ColumnName="TraceMan" />
+          <ScalarProperty Name="Class2" ColumnName="Class2" />
+          <ScalarProperty Name="Level2" ColumnName="Level2" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoleInfo">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.RoleInfo)">
+        <MappingFragment StoreEntitySet="RoleInfo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CaseAnalysisInfo">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.CaseAnalysisInfo)">
+        <MappingFragment StoreEntitySet="CaseAnalysisInfo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="UserInfoRoleInfo" TypeName="DataModel.UserInfoRoleInfo" StoreEntitySet="UserInfoRoleInfo">
+      <EndProperty Name="UserInfo">
+        <ScalarProperty Name="Id" ColumnName="UserInfo_Id" />
+      </EndProperty>
+      <EndProperty Name="RoleInfo">
+        <ScalarProperty Name="Id" ColumnName="RoleInfo_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

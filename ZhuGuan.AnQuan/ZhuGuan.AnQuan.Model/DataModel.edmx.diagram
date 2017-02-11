@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7fe01c83247b4a0689a976fe3065a4f5" Name="Diagram1" >
+        <EntityTypeShape EntityType="DataModel.UnitInfo" Width="1.5" PointX="1.375" PointY="5.125" />
+        <EntityTypeShape EntityType="DataModel.UserInfo" Width="1.5" PointX="4" PointY="5.25" />
+        <EntityTypeShape EntityType="DataModel.TeamInfo" Width="1.5" PointX="1.5" PointY="2.5" />
+        <EntityTypeShape EntityType="DataModel.AccidentInfo" Width="1.5" PointX="4.25" PointY="1" />
+        <EntityTypeShape EntityType="DataModel.HiddenDangerInfo" Width="1.5" PointX="7" PointY="0.5" />
+        <AssociationConnector Association="DataModel.UnitInfoUserInfo" />
+        <AssociationConnector Association="DataModel.UnitInfoTeamInfo" />
+        <EntityTypeShape EntityType="DataModel.RoleInfo" Width="1.5" PointX="7" PointY="5.25" />
+        <AssociationConnector Association="DataModel.UserInfoRoleInfo" />
+        <EntityTypeShape EntityType="DataModel.CaseAnalysisInfo" Width="1.5" PointX="10.125" PointY="1.5" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

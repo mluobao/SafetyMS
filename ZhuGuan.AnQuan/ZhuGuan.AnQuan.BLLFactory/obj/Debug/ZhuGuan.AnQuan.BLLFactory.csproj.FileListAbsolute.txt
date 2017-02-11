@@ -1,0 +1,12 @@
+F:\LuobaoDemo\AnQuanSys\ZhuGuan.AnQuan\ZhuGuan.AnQuan.BLLFactory\bin\Debug\ZhuGuan.AnQuan.BLLFactory.dll
+F:\LuobaoDemo\AnQuanSys\ZhuGuan.AnQuan\ZhuGuan.AnQuan.BLLFactory\bin\Debug\ZhuGuan.AnQuan.BLLFactory.pdb
+F:\LuobaoDemo\AnQuanSys\ZhuGuan.AnQuan\ZhuGuan.AnQuan.BLLFactory\bin\Debug\ZhuGuan.AnQuan.IBLL.dll
+F:\LuobaoDemo\AnQuanSys\ZhuGuan.AnQuan\ZhuGuan.AnQuan.BLLFactory\bin\Debug\ZhuGuan.AnQuan.Model.dll
+F:\LuobaoDemo\AnQuanSys\ZhuGuan.AnQuan\ZhuGuan.AnQuan.BLLFactory\bin\Debug\EntityFramework.dll
+F:\LuobaoDemo\AnQuanSys\ZhuGuan.AnQuan\ZhuGuan.AnQuan.BLLFactory\bin\Debug\ZhuGuan.AnQuan.IBLL.pdb
+F:\LuobaoDemo\AnQuanSys\ZhuGuan.AnQuan\ZhuGuan.AnQuan.BLLFactory\bin\Debug\ZhuGuan.AnQuan.Model.pdb
+F:\LuobaoDemo\AnQuanSys\ZhuGuan.AnQuan\ZhuGuan.AnQuan.BLLFactory\bin\Debug\EntityFramework.xml
+F:\LuobaoDemo\AnQuanSys\ZhuGuan.AnQuan\ZhuGuan.AnQuan.BLLFactory\bin\Debug\zh-Hans\EntityFramework.resources.dll
+F:\LuobaoDemo\AnQuanSys\ZhuGuan.AnQuan\ZhuGuan.AnQuan.BLLFactory\obj\Debug\ZhuGuan.AnQuan.BLLFactory.csprojResolveAssemblyReference.cache
+F:\LuobaoDemo\AnQuanSys\ZhuGuan.AnQuan\ZhuGuan.AnQuan.BLLFactory\obj\Debug\ZhuGuan.AnQuan.BLLFactory.dll
+F:\LuobaoDemo\AnQuanSys\ZhuGuan.AnQuan\ZhuGuan.AnQuan.BLLFactory\obj\Debug\ZhuGuan.AnQuan.BLLFactory.pdb
